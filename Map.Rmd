@@ -1,0 +1,38 @@
+---
+title: "My Map"
+author: "Marko Intihar"
+date: "12/21/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, map, echo=FALSE}
+library(leaflet)
+cities <- data.frame(lat = c(46.05690008981487, 
+                             46.659223954820966, 
+                             45.51437329626318,
+                             45.800392427128344,
+                             46.243981400865216,
+                             46.55139189129725,
+                             46.241670912618574),
+                     lon = c(14.5055389013696, 
+                             16.164027634406, 
+                             13.590810297492283,
+                             15.167373702836532,
+                             15.269039138419155,
+                             15.651276426245598,
+                             14.359733387782423))
+
+cities %>% 
+  leaflet() %>%
+  addTiles() %>% 
+  addMarkers()
+
+```
+
+
+
+
